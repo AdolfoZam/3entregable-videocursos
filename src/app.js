@@ -4,6 +4,7 @@ const initModels = require('./models/init.models');
 const userRoutes = require('./routes/users.routes');//importo la ruta de usuarios
 const courseRoutes = require('./routes/courses.routes');//importo la ruta de cursos
 const categoriesRoutes = require('./routes/categories.routes');
+const videosRoutes = require('./routes/videos.routes');
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.get("/", ( req, res ) => {
 app.use('/api/v1', userRoutes);
 app.use('/api/v1', courseRoutes);
 app.use('/api/v1', categoriesRoutes);
+app.use('/api/v1', videosRoutes);
 
 app.listen(PORT, () => {
     console.log(`servidor corriendo en el puerto ${PORT}`);

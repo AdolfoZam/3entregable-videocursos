@@ -27,10 +27,10 @@ const users = [
 ];
 
 const courses = [
-  { title: "ingles", description: "nivel 1", instructor: "maria" }, //curso 1
-  { title: "cocina", description: "saludable", instructor: "alejandro" }, //curso 2
-  { title: "programacion", description: "fundamentos", instructor: "andres" }, //curso 3
-  { title: "historia", description: "mediaval", instructor: "diana" }, //curso 4
+  { title: "ingles", description: "nivel 1", instructor: "maria", user_id:1}, //curso 1
+  { title: "cocina", description: "saludable", instructor: "alejandro", user_id:2 }, //curso 2
+  { title: "programacion", description: "fundamentos", instructor: "andres", user_id:3}, //curso 3
+  { title: "historia", description: "mediaval", instructor: "diana", user_id:3 }, //curso 4
 ];
 
 const categories = [
@@ -44,13 +44,13 @@ const videos = [
   { title: "basico", url: "http://1", courses_id: 1 },
   { title: "intermedio", url: "http://2", courses_id: 1 },
   { title: "avanzado", url: "http://3", courses_id: 1 },
-  { title: "costa", url: "http://1", courses_id: 2 },
-  { title: "paisa", url: "http://2", courses_id: 2 },
+  { title: "Comida paisa", url: "http://1", courses_id: 2 },
+  { title: "comida valluna", url: "http://2", courses_id: 2 },
   { title: "javascript", url: "http://1", courses_id: 3 },
   { title: "c++", url: "http://2", courses_id: 3 },
   { title: "python", url: "http://3", courses_id: 3 },
   { title: "renacimiento", url: "http://1", courses_id: 4 },
-  { title: "industrial", url: "http://2", courses_id: 4 },
+  { title: "era industrial", url: "http://2", courses_id: 4 },
 ];
 
 const userCourses = [
@@ -60,7 +60,7 @@ const userCourses = [
   { user_id: 1, courses_id: 2 },
 ];
 
-db.sync({ force: true })
+db.sync({ force: false })
   .then(() => {
     console.log("iniciando el sembrado");
     users.forEach((user) => Users.create(user));

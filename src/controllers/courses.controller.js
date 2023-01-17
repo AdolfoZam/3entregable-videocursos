@@ -8,6 +8,22 @@ const getAllCourses = async ( req, res ) => {
         res.status(400).json(error.message);
     }
 }
+//controlador para obtener los cursos con sus categorias
+const getCoursesWithCategories = async ( req, res ) => {
+    try {
+        const { id } = req.params;
+        const result = await CourseServices.getWithCategories(id);
+        res.json({
+            message:"enviando cursos con categorias ",
+            data:result,
+        });
+    } catch (error){
+        res.status(400).json({
+            error: error.messages,
+            details: error.stacks,
+        });
+    }
+}
 
 const createCourses = async ( req, res ) => {
     try {
@@ -30,4 +46,4 @@ const updateCourses = async ( req, res ) => {
     }
 }
 
-module.exports = { getAllCourses, createCourses, updateCourses }
+module.exports = { getAllCourses, getCoursesWithCategories, createCourses, updateCourses }

@@ -1,4 +1,3 @@
-const { json } = require('sequelize');
 const CategoriesServices = require('../services/categories.services');
 
 //controlador que consulta los servicios para ejecutar el metodo que consulta la categoria
